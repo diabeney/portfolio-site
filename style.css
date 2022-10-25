@@ -1,15 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Quicksand:wght@700&family=Rubik:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Karla:wght@400;500;700&family=Quicksand:wght@700&display=swap");
 :root {
   --clr-primary-700: hsl(216, 42%, 5%);
-  --clr-primary-transparent: hsla(216, 42%, 5%, 0.887);
-  --clr-accent-400: hsl(192, 19%, 95%);
+  --clr-primary-400: hsl(216, 22%, 15%);
+  --clr-primary-transparent: hsla(216, 42%, 5%, 0.787);
+  --clr-accent-400: hsl(192, 19%, 90%);
   --clr-secondary-600: hsl(148, 16%, 68%);
   --clr-white: hsl(255, 100%, 100%);
-  --clr-logo: hsl(157, 86%, 57%);
-  /* --clr-logo: hsl(340, 86%, 57%); */
-
+  --clr-blob: hsl(157, 86%, 57%);
+  --clr-logo: #3bffd5;
   --ff-primary: "Karla", sans-serif;
-  --ff-secondary: "Rubik", sans-serif;
+  --ff-secondary: "Inter", sans-serif;
   --ff-logo: "Quicksand", sans-serif;
 
   --fs-sm: 1rem;
@@ -49,7 +49,7 @@ html {
 }
 
 /* Allow percentage-based heights */
-html,
+
 body {
   height: 100%;
   overflow-x: hidden;
@@ -57,6 +57,7 @@ body {
 
 /* Typographic tweaks */
 body {
+  position: relative;
   line-height: calc(1em + 0.5rem);
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
@@ -98,9 +99,6 @@ mark {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
 
 /* Single taps are dispatched immediately on clickable elements */
 a,
@@ -175,6 +173,9 @@ textarea {
   display: none !important;
 }
 
+.hidden {
+  overflow: hidden !important;
+}
 .margin-y-auto {
   margin-block: auto;
 }
@@ -241,6 +242,11 @@ textarea {
   margin-block: var(--size-800);
 }
 
+.overlay {
+  background-color: var(--clr-primary-transparent);
+  backdrop-filter: blur(10px);
+}
+
 .text-cen {
   text-align: center;
 }
@@ -257,13 +263,14 @@ textarea {
   color: var(--clr-accent-400);
   font-size: var(--fs-md);
   font-weight: var(--fw-regular);
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
-.text-subheadiing {
+.text-subheading {
   color: var(--clr-secondary-600);
   font-size: var(--fs-lg);
   font-weight: var(--fw-semi-bold);
+  font-family: var(--ff-secondary);
 }
 
 .container {
@@ -285,7 +292,6 @@ textarea {
   top: 3%;
   aspect-ratio: 1/1;
   width: var(--size-900);
-  border: 1px solid red;
   z-index: 101;
   overflow: hidden;
   padding: 0.2rem;
@@ -293,36 +299,25 @@ textarea {
 
 .bar {
   display: block;
-  width: var(--size-900);
+  width: var(--size-800);
   height: 0.2rem;
   border-radius: var(--size-300);
   background-color: var(--clr-logo);
   position: relative;
-  /* transform: rotate(44deg) translate(0, 0); */
+  margin-block: 0.2rem;
+  transition: all 200ms ease-in-out;
 }
 
-.bar::before {
-  content: "";
-  position: absolute;
-  width: 90%;
-  height: 0.2rem;
-  background-color: var(--clr-logo);
-  border-radius: var(--size-400);
-  top: -0.6rem;
-  right: 0;
-  /* transform: rotate(90deg) translate(20%, -20%); */
+.bar-cen[data-rotate="true"] {
+  opacity: 0;
 }
-
-.bar::after {
-  /* display: none; */
-  content: "";
-  position: absolute;
-  width: 110%;
-  height: 0.2rem;
-  background-color: var(--clr-logo);
-  border-radius: var(--size-400);
-  top: 0.6rem;
-  right: 0;
+.bar-top[data-rotate="true"] {
+  transform: rotate(40deg);
+  transform-origin: 0.6rem;
+}
+.bar-bot[data-rotate="true"] {
+  transform: rotate(-40deg);
+  transform-origin: 0.1rem -0.2rem;
 }
 
 .text-logo {
@@ -347,12 +342,11 @@ textarea {
 }
 
 .blob {
-  /* position: absolute; */
   aspect-ratio: 1/1;
   top: 4%;
   right: 20%;
   width: 10rem;
-  background-color: #3bffd5;
+  background-color: var(--clr-blob);
   border-top-left-radius: 5rem;
   border-top-right-radius: 15rem;
   border-bottom-left-radius: 20rem;
@@ -362,22 +356,25 @@ textarea {
 .blob-second {
   top: 20%;
   right: 2%;
-  background-color: #57ffa3;
+  background-color: var(--clr-logo);
 }
 
 #app {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100vw;
-  min-height: 200vh;
   background-color: var(--clr-primary-transparent);
 }
 
 header {
   position: relative;
   z-index: 100;
-  width: 80%;
+  width: 100%;
+  padding-block: var(--size-700);
+  height: 100vh;
+}
+
+nav[data-open="true"] {
+  transform: translateY(0);
 }
 
 nav {
@@ -388,6 +385,8 @@ nav {
   flex-direction: column;
   align-items: space-around;
   backdrop-filter: none;
+  transform: translateY(-120%);
+  transition: all 300ms ease-in-out;
 }
 
 nav ul {
@@ -395,19 +394,116 @@ nav ul {
 }
 
 nav ul li {
+  position: relative;
   margin-inline: var(--size-300);
 }
 
 nav ul li a {
   color: var(--clr-accent-400);
+  transition: color 200ms ease-in;
 }
 
+nav ul li a:hover {
+  color: var(--clr-logo);
+}
+
+.btn-container {
+  width: fit-content;
+}
+
+.btn {
+  background-color: var(--clr-logo);
+  border-radius: 0.4rem;
+  border: none;
+  font-weight: var(--fw-bold);
+  transition: all 200ms ease-in;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--clr-primary-700);
+  color: var(--clr-logo);
+}
 main {
+  width: 100%;
+  margin-top: -100vh;
+}
+
+.projects {
+  margin-block: calc(var(--size-900) * 3);
+}
+
+.project__image,
+.description {
+}
+
+.links {
+  padding: 0;
+  gap: var(--size-200);
+  overflow: hidden;
+}
+
+.links li {
+  border: 1px solid var(--clr-logo);
   position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.links li::after {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: var(--clr-primary-700);
+  transform: translateX(-102%);
+  transition: all 200ms ease-in;
+  z-index: 9;
 }
+
+.links li:hover::after {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.links li a {
+  position: relative;
+  z-index: 10;
+  color: var(--clr-logo);
+}
+
+aside {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--clr-primary-700);
+  top: 0;
+  border: 1px solid blue;
+}
+
+.skills {
+  border: 1px solid red;
+  height: 60vh;
+  width: 60vw;
+}
+.about {
+  border: 1px solid green;
+  position: sticky;
+  top: 0;
+  height: 30vh;
+  width: 40vw;
+  right: 0;
+}
+
 @media (min-width: 50em) {
+  :root {
+    --fs-xlg: 3.5rem;
+  }
+  .menu-btn {
+    display: none;
+  }
+
   .even-columns {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
@@ -417,8 +513,8 @@ main {
     width: 20rem;
   }
   header {
-    position: sticky;
-    top: 0;
+    padding-block: 0;
+    height: fit-content;
   }
 
   .logo {
@@ -430,9 +526,19 @@ main {
     flex-direction: row;
     justify-content: space-around;
     backdrop-filter: blur(20px);
+    transform: translateY(0) !important;
   }
 
   nav ul {
     flex-direction: row !important;
+  }
+
+  main {
+    margin-top: 0;
+  }
+
+  .intro p {
+    width: 80%;
+    margin-inline: auto;
   }
 }

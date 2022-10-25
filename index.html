@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animations.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
@@ -14,12 +15,12 @@
     </div>
     <section id="app">
       <header class="margin-x-auto">
-        <div class="menu-btn flex flex-cen">
-          <!-- <span class="bar bar-top"></span> -->
-          <span class="bar bar-top"></span>
-          <!-- <span class="bar bar-top"></span> -->
+        <div class="menu-btn flex flex-column flex-cen">
+          <span data-rotate="false" class="bar bar-top"></span>
+          <span data-rotate="false" class="bar bar-cen"></span>
+          <span data-rotate="false" class="bar bar-bot"></span>
         </div>
-        <nav class="flex w-100">
+        <nav data-open="false" class="flex w-100">
           <div class="logo padding-y-md margin-y-auto margin-x-auto">
             <p class="text-logo">diabeney.</p>
           </div>
@@ -33,18 +34,85 @@
       </header>
       <main>
         <section class="container">
-          <h1 class="text-cen text-heading padding-block-xl">
-            Hello, i'm <br />
-            <mark>Diabene Addo Ernest</mark>
-          </h1>
-          <p class="text-body padding-x-lg text-cen margin-y-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Exercitationem, id aliquid corporis obcaecati ab minima eos nam
-            dolorum aut voluptatem beatae quod, illo magnam odit deserunt.
-            Mollitia ipsum voluptatum magnam.
-          </p>
+          <section class="page intro margin-y-lg">
+            <h1
+              class="text-heading padding-y-xl padding-x-md text-cen scale-in-center"
+            >
+              Hello, i'm <br />
+              <mark>Diabene Yaw Addo</mark>
+            </h1>
+            <p class="text-body padding-x-md text-cen scale-in-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Exercitationem, id aliquid corporis obcaecati ab minima eos nam
+              dolorum aut voluptatem beatae quod, illo magnam odit deserunt.
+              Mollitia ipsum voluptatum magnam.
+            </p>
+            <div class="btn-container margin-y-lg margin-x-auto">
+              <button class="btn padding-x-md padding-y-sm scale-in-center">
+                Download CV
+              </button>
+            </div>
+          </section>
+          <section class="projects margin-y-lg">
+            <h1 class="text-heading text-cen padding-y-md">Projects</h1>
+            <section
+              class="project-container margin-y-lg container even-columns"
+            >
+              <article class="project__image padding-x-md">
+                <img src="imgs/Screenshot (60).png" alt="" />
+              </article>
+              <article class="description padding-x-md">
+                <h1 class="description__title text-subheading padding-y-md">
+                  Avem-Ed | Africa
+                </h1>
+                <p class="description__text text-body padding-y-sm">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                  explicabo dolor quos perferendis, reprehenderit nobis corporis
+                  atque eligendi.
+                </p>
+                <ul role="list" class="links flex">
+                  <li class="padding-x-lg padding-y-sm">
+                    <a href="">Live Demo</a>
+                  </li>
+                  <li class="padding-x-lg padding-y-sm">
+                    <a href="">GitHub</a>
+                  </li>
+                </ul>
+              </article>
+            </section>
+            <section
+              class="project-container margin-y-lg container even-columns"
+            >
+              <article class="project__image padding-x-md">
+                <img src="imgs/Screenshot (46).png" alt="" />
+              </article>
+              <article class="description padding-x-md">
+                <h1 class="description__title text-subheading padding-y-md">
+                  Avem-Ed | Africa
+                </h1>
+                <p class="description__text text-body padding-y-sm">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                  explicabo dolor quos perferendis, reprehenderit nobis corporis
+                  atque eligendi.
+                </p>
+                <ul role="list" class="links flex">
+                  <li class="padding-x-lg padding-y-sm">
+                    <a href="">Live Demo</a>
+                  </li>
+                  <li class="padding-x-lg padding-y-sm">
+                    <a href="">GitHub</a>
+                  </li>
+                </ul>
+              </article>
+            </section>
+          </section>
         </section>
       </main>
+      <aside class="">
+        <section class="skills"></section>
+        <section class="about"></section>
+      </aside>
+      <aside></aside>
     </section>
     <script type="module" src="/main.js"></script>
   </body>
