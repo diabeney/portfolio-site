@@ -30,3 +30,29 @@ menuBtn.addEventListener("click", () => {
   header.classList.toggle("overlay");
   document.body.classList.toggle("hidden");
 });
+
+const OPTIONS = {
+  threshold: 0.4,
+};
+
+let callback = (entries, appearOnScroll) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    else {
+      if (entry.target.classList.contains("project__image")) {
+        entry.target.classList.add("slide-tr");
+      } else {
+        entry.target.classList.add("slide-left");
+      }
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
+};
+const appearOnScroll = new IntersectionObserver(callback, OPTIONS);
+
+const projectImages = document.querySelectorAll(".project__image");
+const projectDescription = document.querySelectorAll(".content");
+const contactImage = document.querySelectorAll(".contact-img");
+
+projectImages.forEach((image) => appearOnScroll.observe(image));
+projectDescription.forEach((content) => appearOnScroll.observe(content));
