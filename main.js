@@ -56,3 +56,7 @@ const contactImage = document.querySelectorAll(".contact-img");
 
 projectImages.forEach((image) => appearOnScroll.observe(image));
 projectDescription.forEach((content) => appearOnScroll.observe(content));
+
+const [dateElement] = getElements("#date");
+const date = new Date();
+dateElement.textContent = date.getFullYear();

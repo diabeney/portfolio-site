@@ -9,10 +9,6 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div class="blob-container">
-      <div class="blob"></div>
-      <div class="blob blob-second"></div>
-    </div>
     <section id="app">
       <header class="margin-x-auto">
         <div class="menu-btn flex flex-column flex-cen">
@@ -73,17 +69,25 @@
                   </p>
                   <ul role="list" class="links flex">
                     <li class="padding-x-lg padding-y-sm">
-                      <a href="">Live Demo</a>
+                      <a
+                        target="_blank"
+                        href="https://avemedafrica.netlify.app/"
+                        >Live Demo</a
+                      >
                     </li>
                     <li class="padding-x-lg padding-y-sm">
-                      <a href="">GitHub</a>
+                      <a
+                        target="_blank"
+                        href="https://github.com/diabeney/changeAfrica"
+                        >GitHub</a
+                      >
                     </li>
                   </ul>
                 </div>
               </article>
             </section>
             <section
-              class="project-container margin-y-lg container even-columns"
+              class="project-container padding-y-lg container even-columns"
             >
               <article class="project__image padding-x-md">
                 <img src="imgs/Screenshot (46).png" alt="" />
@@ -91,7 +95,7 @@
               <article class="description padding-x-md">
                 <div class="content">
                   <h1 class="description__title text-subheading padding-y-md">
-                    Avem-Ed | Africa
+                    Solved exercism challenges
                   </h1>
                   <p class="description__text text-body padding-y-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -100,10 +104,18 @@
                   </p>
                   <ul role="list" class="links flex">
                     <li class="padding-x-lg padding-y-sm">
-                      <a href="">Live Demo</a>
+                      <a
+                        target="_blank"
+                        href="https://exercism-challenge.netlify.app/"
+                        >Live Demo</a
+                      >
                     </li>
                     <li class="padding-x-lg padding-y-sm">
-                      <a href="">GitHub</a>
+                      <a
+                        target="_blank"
+                        href="https://github.com/diabeney/exercism-challenges"
+                        >GitHub</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -112,8 +124,8 @@
           </section>
         </section>
       </main>
-      <footer class="container padding-y-lg">
-        <section class="about padding-x-md padding-y-lg">
+      <footer class="container">
+        <section class="about padding-x-md">
           <h3 class="text-subheading margin-y-lg">About Me</h3>
           <p class="text-body">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsam
@@ -129,7 +141,7 @@
           </p>
         </section>
         <section class="skills flex">
-          <h3 class="padding-y-md text-subheading text-cen">Skills</h3>
+          <h3 class="padding-y-lg text-subheading text-cen">Skills</h3>
           <ul role="list" class="flex flex-cen padding-x-md padding-y-sm">
             <li><img src="./imgs/html-svgrepo-com.svg" alt="HTML" /></li>
             <li><img src="./imgs/css-svgrepo-com.svg" alt="CSS" /></li>
@@ -147,13 +159,19 @@
             class="contact flex margin-x-auto margin-y-sm padding-x-md padding-y-md"
           >
             <div class="contact-img margin-x-sm flex flex-cen heartbeat">
-              <img src="./imgs/github-svgrepo-com.svg" alt="" />
+              <a href="https://github.com/diabeney"
+                ><img src="./imgs/github-svgrepo-com.svg" alt=""
+              /></a>
             </div>
             <div class="contact-img margin-x-sm flex flex-cen heartbeat">
-              <img src="./imgs/linkedin-svgrepo-com.svg" alt="" />
+              <a href="https://www.linkedin.com/in/diabeney/"
+                ><img src="./imgs/linkedin-svgrepo-com.svg" alt=""
+              /></a>
             </div>
             <div class="contact-img margin-x-sm flex flex-cen heartbeat">
-              <img src="./imgs/twitter-svgrepo-com.svg" alt="" />
+              <a href="https://twitter.com/diabeneyy"
+                ><img src="./imgs/twitter-svgrepo-com.svg" alt=""
+              /></a>
             </div>
           </section>
         </section>
@@ -162,7 +180,8 @@
         <section class="copyright container flex flex-cen">
           <address class="text-body padding-y-md">Akosombo, Ghana</address>
           <p class="text-body">
-            <a href="mailto:addodiabene69@gmail.com">Diabene</a> &copy;, 2022
+            <a href="mailto:addodiabene69@gmail.com">Diabene</a> &copy;,
+            <span id="date"></span>
           </p>
         </section>
       </aside>
