@@ -50,8 +50,12 @@ html {
 
 /* Allow percentage-based heights */
 
+html {
+  overflow-x: hidden !important;
+}
+
 body {
-  height: 100%;
+  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -276,7 +280,6 @@ textarea {
 }
 
 .container {
-  /* padding: 0rem 1rem; */
   width: min(1200px, 100%);
   margin-inline: auto;
 }
