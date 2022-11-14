@@ -60,3 +60,21 @@ projectDescription.forEach((content) => appearOnScroll.observe(content));
 const [dateElement] = getElements("#date");
 const date = new Date();
 dateElement.textContent = date.getFullYear();
+
+const [projectLink, aboutLink, contactLink] = getElements(
+  "#projects__link",
+  "#about__link",
+  "#message__link"
+);
+
+const scrollToElement = (element, target) => {
+  element.addEventListener("click", (e) => {
+    e.preventDefault();
+    let [targetElement] = getElements(target);
+    targetElement.scrollIntoView();
+  });
+};
+
+scrollToElement(projectLink, "#projects");
+scrollToElement(aboutLink, "#about");
+scrollToElement(contactLink, "#contact");

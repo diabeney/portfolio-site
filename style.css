@@ -262,7 +262,7 @@ textarea {
   font-size: var(--fs-xlg);
   font-weight: var(--fw-bold);
   line-height: 1.3;
-  font-family: var(--ff-secondary);
+  font-family: var(--ff-primary);
 }
 
 .text-body {
@@ -372,6 +372,11 @@ nav ul {
 nav ul li {
   position: relative;
   margin-inline: var(--size-300);
+}
+
+nav ul li:last-child {
+  border: 1px solid var(--clr-logo);
+  padding: var(--size-100) var(--size-300);
 }
 
 nav ul li a {

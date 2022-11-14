@@ -21,10 +21,15 @@
             <p class="text-logo">dbn.</p>
           </div>
           <ul role="list" class="padding-x-sm flex flex-cen padding-y-md">
-            <li class="padding-y-sm"><a href="">Projects</a></li>
-            <li class="padding-y-sm"><a href="">About Me</a></li>
-            <li class="padding-y-sm"><a href="">Contact</a></li>
-            <li class="padding-y-sm"><a href="">Skills</a></li>
+            <li class="padding-y-sm">
+              <a href="" id="projects__link">Projects</a>
+            </li>
+            <li class="padding-y-sm">
+              <a href="" id="about__link">About Me</a>
+            </li>
+            <li class="padding-y-sm">
+              <a href="" id="message__link">Send me a message</a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -34,17 +39,15 @@
             <h1
               class="text-heading padding-y-xl padding-x-md text-cen scale-in-center"
             >
-              Hello, i'm <br />
+              Nice to meet you!, I'm <br />
               <mark>Diabene Yaw Addo</mark>
             </h1>
             <p class="text-body padding-x-md text-cen scale-in-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Exercitationem, id aliquid corporis obcaecati ab minima eos nam
-              dolorum aut voluptatem beatae quod, illo magnam odit deserunt.
-              Mollitia ipsum voluptatum magnam.
+              A frontend web developer and I build web applications that users
+              love!!
             </p>
           </section>
-          <section class="projects margin-y-lg">
+          <section class="projects margin-y-lg" id="projects">
             <h1 class="text-heading text-cen padding-y-md">Projects</h1>
             <section
               class="project-container margin-y-lg container even-columns"
@@ -58,9 +61,11 @@
                     Avem-Ed | Africa
                   </h1>
                   <p class="description__text text-body padding-y-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Iure explicabo dolor quos perferendis, reprehenderit nobis
-                    corporis atque eligendi.
+                    A landing page for Avem-Ed, an organization focused on
+                    encouraging African Youth to take more careers in STEM.
+                  </p>
+                  <p class="description__text text-body padding-y-sm">
+                    HTML CSS JAVASCRIPT
                   </p>
                   <ul role="list" class="links flex">
                     <li class="padding-x-lg padding-y-sm">
@@ -93,9 +98,11 @@
                     Solved exercism challenges
                   </h1>
                   <p class="description__text text-body padding-y-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Iure explicabo dolor quos perferendis, reprehenderit nobis
-                    corporis atque eligendi.
+                    Building UI for some Exercism challenges to improve my
+                    frontend skills.
+                  </p>
+                  <p class="description__text text-body padding-y-sm">
+                    HTML CSS JAVASCRIPT
                   </p>
                   <ul role="list" class="links flex">
                     <li class="padding-x-lg padding-y-sm">
@@ -120,20 +127,26 @@
         </section>
       </main>
       <footer class="container">
-        <section class="about padding-x-md">
+        <section class="about padding-x-md" id="about">
           <h3 class="text-subheading margin-y-lg">About Me</h3>
           <p class="text-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsam
-            perspiciatis veritatis, delectus minima quo earum fuga, libero optio
-            officiis blanditiis soluta, illum cumque. Porro veniam perspiciatis
-            iste numquam harum!
+            Based in Ghana, I'm currently studying chemical engineering at Kwame
+            Nkrumah University of Science and Technology. I am actively looking
+            for good opportunities to improve my skills and build a sustainable
+            career in tech.
           </p>
-          <h3 class="text-subheading margin-y-lg">What I offer</h3>
+          <h3 class="text-subheading margin-y-lg">What I do</h3>
           <p class="text-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam vitae
-            dicta porro quo, enim provident quod perferendis repellat unde. Nisi
-            earum provident quos maiores odit et culpa voluptate totam quod?
+            These are a few things I do as a web developer and a chemical
+            engineering student.
           </p>
+          <ul class="text-body padding-y-lg">
+            <li>Build web applications.</li>
+            <li>Design objects with AUTOCAD.</li>
+            <li>
+              Write articles on JavaScript and chemical engineering concepts.
+            </li>
+          </ul>
         </section>
         <section class="skills flex">
           <h3 class="padding-y-lg text-subheading text-cen">Skills</h3>
@@ -147,6 +160,7 @@
                 alt="TYPESCRIPT"
               />
             </li>
+            <li><img src="./imgs/react-svgrepo-com.svg" alt="REACT" /></li>
             <li><img src="./imgs/git-svgrepo-com.svg" alt="GIT" /></li>
           </ul>
           <h3 class="text-subheading text-cen margin-y-sm">Contact Me</h3>
@@ -171,10 +185,11 @@
           </section>
         </section>
       </footer>
-      <aside class="flex flex-cen">
+      <aside class="flex flex-cen" id="contact">
         <section class="copyright container flex flex-cen">
           <address class="text-body padding-y-md">Akosombo, Ghana</address>
-          <p class="text-body">
+          <p class="text-body text-cen">
+            Send me a message via <br />
             <a href="mailto:addodiabene69@gmail.com">Diabene</a> &copy;,
             <span id="date"></span>
           </p>
